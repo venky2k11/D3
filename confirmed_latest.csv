@@ -1,4 +1,4 @@
-﻿Country/Region,CountryCode,Lat,Long,Count,Density,Population (2020),DensityGroup
+﻿Country,CountryCode,Lat,Long,Count,Density,Population (2020),DensityGroup
 Mongolia,M12,46.8625,103.8467,220,2,3267320,<=100
 Western Sahara,W01,24.2155,-12.8858,10,2,594215,<=100
 Australia,A09,-35.4735,149.0124,8443,3,25439164,<=100
