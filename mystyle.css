@@ -1,3 +1,50 @@
+/* body {
+	background: rgba(61, 151, 9, 0.301);
+} */
+
+/* .solid {
+	border-style: solid;
+	border-width: 2px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  }
+  .header img1 {
+	width: 75px;
+	height: 75px;
+	flex-shrink: 0;
+  }
+
+  .header img2 {
+	width: 175px;
+	height: 75px;
+	flex-shrink: 0;
+  }
+  .header h1 {
+	margin: 0;
+	text-align: center;
+	text-transform: uppercase;
+  } */
+  /* @media (max-width: 520px) {
+	header h1 {
+	  font-size: 1em;
+	} */
+  }
+
+.header img {
+	float: left;
+	width: 1708px;
+	height: 143px;
+	background: #555;
+	}
+	
+.header h1 {
+position: relative;
+top: 18px;
+left: 10px;
+text-align: center;
+/* text-transform: uppercase; */
+}
 
 .circle:hover {
 	stroke: black;
