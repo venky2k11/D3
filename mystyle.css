@@ -15,12 +15,22 @@ div.tooltip {
 	border: 0px;
 	border-radius: 8px;
 	pointer-events: none;
-	opacity: 1;
+	opacity: 0;
 }
 
-/* body {
-background-color: rgba(10, 0, 1, 0.5);
-} */
+div.tooltip1 {
+	position: absolute;
+	text-align: left;
+	width: 190px;
+	height: 50px;
+	padding: 2px;
+	font: 12px sans-serif;
+	background: lightsteelblue;
+	border: 0px;
+	border-radius: 8px;
+	/* pointer-events: none; */
+	opacity: 0;
+}
 
 h2 {
 color: navy;
@@ -32,12 +42,26 @@ h1 {
 	margin-left: 20px;
 	}	
 
-input[type=button] {
+.custom-input {
 	position: relative;
-	text-align: center;
+	font-family: Arial;
 	padding: 16px 32px;
-	text-decoration: none;
-	margin: 4px 2px;
+	top: 100%;
+	left: 50;
+	right: 100;
+	margin-left: 310px;
+	padding: 16px 32px;
 	cursor: pointer;
-	position: 60px;
+	}
+
+.custom-select {
+	position: relative;
+	font-family: Arial;
+	padding: 8px 16px;
+	top: 100%;
+	left: 50;
+	right: 100;
+	margin-left: 325px;
+	border: 1px solid transparent;
+	border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
 	}

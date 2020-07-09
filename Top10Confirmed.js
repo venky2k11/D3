@@ -3,12 +3,12 @@ async function init2() {
 	var height = 600
 	var w = 1100
 	var h = 500
-	var margin = 50
+	var margin = 60
 	var border = 10
 	var bordercolor = 'black'
 
-	const data_conf = await d3.csv("https://raw.githubusercontent.com/venky2k11/D3/master/confirmed_latest_V2.csv", d3.autoType);
-	const data_death = await d3.csv("https://raw.githubusercontent.com/venky2k11/D3/master/dead_latest.csv", d3.autoType);
+	const data_conf = await d3.csv("https://raw.githubusercontent.com/venky2k11/D3/master/data/confirmed_latest_V2.csv", d3.autoType);
+	const data_death = await d3.csv("https://raw.githubusercontent.com/venky2k11/D3/master/data/dead_latest.csv", d3.autoType);
 
 	sortedconf = data_conf.slice().sort((a, b) => d3.descending(a.Count, b.Count))
 	var data_conf2 = sortedconf.filter(function (d, i) { return i < 10 })
@@ -86,13 +86,16 @@ async function init2() {
 		var y = d3.scaleLinear().domain([0, d3.max(selectedVar2, function (d) { return d.Count; })]).range([h, 0]);
 
 		var g = svg.append("g")
-			.attr("transform", "translate(" + 50 + "," + 50 + ")");
+			.attr("transform", "translate(" + margin + "," + margin + ")");
 
 		svg.append("g")
+			.attr("class", "axis")
 			.attr("transform", "translate(" + margin + "," + margin + ")")
 			.call(d3.axisLeft(y));
 
 		svg.append("g")
+			.attr("class", "axis")
+			.style("font", "14px times")
 			.attr("transform", "translate(" + margin + "," + (h + margin) + ")")
 			.call(d3.axisBottom(x));
 

@@ -8,24 +8,30 @@
     <link rel="stylesheet" type="text/css" href="mystyle.css">
     <script type="text/javascript" language="javascript" src="map_confirmed.js"></script>
     <script type="text/javascript" language="javascript" src="Top10Confirmed.js"></script>
+    <script type="text/javascript" language="javascript" src="confirmed_timeline.js"></script>
 </head>
 
 <body onload='init1(); init2(); init3()'>
-    <h1>COVID19 Status (as on 4th July 2020)</h1>
-    <h2>Confirmed cases - by Country:</h2>
+    <h1>Coronavirus (COVID-19) Status (as on 4th July 2020)</h1>
+    <h2>Laboratory Confirmed cases - by Country:</h2>
     <div id="my_dataviz" style="text-align:center;"></div>
     <p> <br> <br></p>
 
     <h2>Top 10 Countries (Confirmed/Death cases):</h2>
-    <input id="ConfirmedButton" type="button" title="Click to show Confirmed Cases" value="Confirmed cases"></input>
-    <input id="DeathButton" type="button" title="Click to show Death Cases" value="Death cases" ></input>
+    <div class="custom-input">
+        <input id="ConfirmedButton" type="button" title="Click to show Confirmed Cases" value="Confirmed cases"></input>
+        <input id="DeathButton" type="button" title="Click to show Death Cases" value="Death cases"></input>
+    </div>
     <div id="my_dataviz3" style="text-align:center;"></div>
 
     <p> <br> <br> </p>
 
-    <h4>Third Chart:</h4>
+    <h2>Timeline of Confirmed cases - by Country:</h2>
+    <div class="custom-select">
+        <p>Select Country:</p>
+        <select id="selectButton" style="text-align:center;"></select>
+    </div>
     <div id="my_dataviz2" style="text-align:center;"></div>
-    <script type="text/javascript" src="1_2.js"></script>
 
     <p> <br> <br> </p>
 </body>

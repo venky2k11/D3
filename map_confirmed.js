@@ -24,21 +24,38 @@ async function init3() {
 		// Map and projection
 		var projection = d3.geoMercator()
 			.center([38.9637, 35.2433])        // Centered on Turkey
-			.scale(120)                       // Zoom
+			.scale(160)                       // Zoom
 			.translate([width / 2, height / 2]);
 	} catch (error) {
 		console.log(error);
 	}
 
-	// async function init1() {
-
-	const dataGeo = await d3.json("https://raw.githubusercontent.com/venky2k11/D3/master/worldgeo.json");
-	const data = await d3.csv("https://raw.githubusercontent.com/venky2k11/D3/master/confirmed_latest_V2.csv", d3.autoType);
+	const dataGeo = await d3.json("https://raw.githubusercontent.com/venky2k11/D3/master/data/worldgeo.json");
+	const data = await d3.csv("https://raw.githubusercontent.com/venky2k11/D3/master/data/confirmed_latest_V2.csv", d3.autoType);
 
 	var valueExtent = d3.extent(data, function (d) { return +d.Count; })
 	var size = d3.scaleSqrt()
 		.domain(valueExtent)
 		.range([1, 50])
+
+	// Color:
+	var allgroups = d3.map(data, function (d) { return (d.DensityGroup) }).keys()
+	var color = d3.scaleOrdinal()
+		.domain(allgroups)
+		.range(d3.schemeCategory10);
+
+	svg.append("g")
+		.attr("class", "legendOrdinal")
+		.attr("transform", "translate(1050,450)");
+
+	var legendOrdinal = d3.legendColor()
+		.shape("path", d3.symbol().type(d3.symbolSquare).size(150)())
+		.shapePadding(10)
+		.scale(color)
+		.title("Density Group:");
+
+	svg.select(".legendOrdinal")
+		.call(legendOrdinal);
 
 	// Draw Map
 	svg.append("g")
@@ -81,12 +98,6 @@ async function init3() {
 		tooltip.style("opacity", 0)
 	}
 
-	// Color:
-	var allgroups = d3.map(data, function (d) { return (d.DensityGroup) }).keys()
-	var color = d3.scaleOrdinal()
-		.domain(allgroups)
-		.range(d3.schemeCategory10);
-
 	// Add circles:
 	svg
 		.selectAll("myCircles")
@@ -102,17 +113,4 @@ async function init3() {
 		.on("mouseover", mouseover)
 		.on("mousemove", mousemove)
 		.on("mouseleave", mouseleave)
-
-	svg.append("g")
-		.attr("class", "legendOrdinal")
-		.attr("transform", "translate(950,400)");
-
-	var legendOrdinal = d3.legendColor()
-		.shape("path", d3.symbol().type(d3.symbolSquare).size(150)())
-		.shapePadding(10)
-		.scale(color)
-		.title("Density Group:");
-
-	svg.select(".legendOrdinal")
-		.call(legendOrdinal);
 }
