@@ -57,6 +57,57 @@ async function init3() {
 	svg.select(".legendOrdinal")
 		.call(legendOrdinal);
 
+	// Annotations:
+	const annotations = [
+		{
+			id: "map1",
+			note: {
+				label: "Country with higest confirmed cases ",
+				title: "United States",
+				align: "middle",  // try right or left
+				wrap: 400,  // try something smaller to see text split in several lines
+				padding: 10   // More = text lower
+			},
+			connector: {
+				end: "arrow"
+			},
+			color: ["#f70c0c"],
+			x: 223,
+			y: 293,
+			dy: 250,
+			dx: 350
+		}
+	]
+
+	const makeAnnotations = d3.annotation()
+		.type(d3.annotationLabel)
+		.annotations(annotations)
+
+	const annotations2 = [
+		{
+			id: "map1",
+			note: {
+				label: "Country with lowest confirmed cases ",
+				title: "Monaco",
+				align: "middle",  // try right or left
+				wrap: 400,  // try something smaller to see text split in several lines
+				padding: 10   // More = text lower
+			},
+			connector: {
+				end: "arrow"
+			},
+			color: ["#011c16"],
+			x: 511.8933805788023,
+			y: 269.1474248511836,
+			dy: -100,
+			dx: -60
+		}
+	]
+
+	const makeAnnotations2 = d3.annotation()
+		.type(d3.annotationLabel)
+		.annotations(annotations2)
+
 	// Draw Map
 	svg.append("g")
 		.selectAll("path")
@@ -81,6 +132,15 @@ async function init3() {
 		.style("border-radius", "5px")
 		.style("padding", "5px")
 
+	svg.append("g")
+		.attr("class", "annotation-group")
+		.call(makeAnnotations)
+
+	svg.append("g")
+		.attr("class", "annotation-group")
+		.call(makeAnnotations2)
+
+
 	// Tooltip functions:
 	var mouseover = function (d) {
 		tooltip.style("opacity", 1)
@@ -97,6 +157,8 @@ async function init3() {
 	var mouseleave = function (d) {
 		tooltip.style("opacity", 0)
 	}
+
+
 
 	// Add circles:
 	svg

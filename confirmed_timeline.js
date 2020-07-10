@@ -28,6 +28,7 @@ async function init1() {
 	function update(data_conf) {
 
 		t1 = data_conf[0].Country;
+		t2 = data_conf[0].Country;
 		t1 = t1 + '\'s Timeline';
 
 		// svg
@@ -91,6 +92,37 @@ async function init1() {
 			tooltip.style("opacity", 0)
 		}
 
+		if (t2 == 'US') {
+			// Annotations:
+			const annotations = [
+				{
+					id: "map1",
+					note: {
+						label: "Growth slowed before raising again",
+						title: "Possible start of 2nd wave",
+						align: "middle",  // try right or left
+						wrap: 300,  // try something smaller to see text split in several lines
+						padding: 10   // More = text lower
+					},
+					connector: {
+						end: "arrow"
+					},
+					color: ["#f70c0c"],
+					x: 1025,
+					y: 193,
+					dy: 50,
+					dx: 50
+				}
+			]
+
+			const makeAnnotations = d3.annotation()
+				.type(d3.annotationLabel)
+				.annotations(annotations)
+
+			svg.append("g")
+				.attr("class", "annotation-group")
+				.call(makeAnnotations)
+		}
 
 		// Color:
 		var color = d3.scaleOrdinal()
