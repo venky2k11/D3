@@ -58,7 +58,7 @@ async function init2() {
 						"Density Group: " + d.DensityGroup + "<br>" +
 						"Density: " + d.Density)
 					.style("left", (d3.mouse(this)[0] + 350) + "px")
-					.style("top", (d3.mouse(this)[1] + 1050) + "px")
+					.style("top", (d3.mouse(this)[1] + 1250) + "px")
 			}
 		} else {
 			var mousemove = function (d) {
@@ -68,7 +68,7 @@ async function init2() {
 						"Density Group: " + d.DensityGroup + "<br>" +
 						"Density: " + d.Density)
 					.style("left", (d3.mouse(this)[0] + 350) + "px")
-					.style("top", (d3.mouse(this)[1] + 1050) + "px")
+					.style("top", (d3.mouse(this)[1] + 1250) + "px")
 			}
 		}
 

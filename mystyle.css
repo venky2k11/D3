@@ -18,6 +18,9 @@ text-align: center;
 	stroke-width: 4px;
 }
 
+p {font-size: 18px;}
+
+
 div.tooltip {
 	position: absolute;
 	text-align: left;

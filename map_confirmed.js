@@ -92,7 +92,7 @@ async function init3() {
 				"Density Group: " + d.DensityGroup + "<br>" +
 				"Density: " + d.Density)
 			.style("left", (d3.mouse(this)[0] + 200) + "px")
-			.style("top", (d3.mouse(this)[1] + 100) + "px")
+			.style("top", (d3.mouse(this)[1] + 200) + "px")
 	}
 	var mouseleave = function (d) {
 		tooltip.style("opacity", 0)
