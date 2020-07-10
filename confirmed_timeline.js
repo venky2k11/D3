@@ -83,8 +83,8 @@ async function init1() {
 				.html("Total Confirmed: " + confcount + "<br>" +
 					"Density Group: " + d[0].DensityGroup + "<br>" +
 					"Density: " + d[0].Density)
-				.style("left", (d3.mouse(this)[0] + 300) + "px")
-				.style("top", (d3.mouse(this)[1] + 1800) + "px")
+				.style("left", (d3.mouse(this)[0] + 200) + "px")
+				.style("top", (d3.mouse(this)[1] + 2000) + "px")
 		}
 
 		var mouseleave = function (d) {

@@ -37,7 +37,7 @@ async function init2() {
 		// create a tooltip
 		var tooltip = d3.select("#my_dataviz3")
 			.append("div")
-			.attr("class", "tooltip")
+			.attr("class", "tooltip2")
 			.style("opacity", 0)
 			.style("background-color", "white")
 			.style("border", "solid")
@@ -58,7 +58,7 @@ async function init2() {
 						"Density Group: " + d.DensityGroup + "<br>" +
 						"Density: " + d.Density)
 					.style("left", (d3.mouse(this)[0] + 350) + "px")
-					.style("top", (d3.mouse(this)[1] + 750) + "px")
+					.style("top", (d3.mouse(this)[1] + 1050) + "px")
 			}
 		} else {
 			var mousemove = function (d) {
@@ -68,7 +68,7 @@ async function init2() {
 						"Density Group: " + d.DensityGroup + "<br>" +
 						"Density: " + d.Density)
 					.style("left", (d3.mouse(this)[0] + 350) + "px")
-					.style("top", (d3.mouse(this)[1] + 750) + "px")
+					.style("top", (d3.mouse(this)[1] + 1050) + "px")
 			}
 		}
 

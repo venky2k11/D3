@@ -14,18 +14,22 @@
 
 <body onload='init1(); init2(); init3()'>
     <div class="header">
-        <!-- <h1 class="logo">My Uni Logo</h1> -->
-        <!-- <img src="Unilogo2.jpg" alt="logo" /> -->
-        <!-- <h1>CORONAVIRUS (COVID-19) STATUS <sub>(as on 4th July 2020)</sub> </h1> -->
-        <!-- <img id="img2" src="me.png" alt="logo" style="vertical-align:middle"/> -->
-        <img src="H1.png" alt="logo" />
+        <img src="H3.png" alt="logo" />
     </div>
-
-    <p> </p>
-
+    <p> <br> <br> <br><br><br><br><br><br></p>
     <h2>Laboratory Confirmed cases - by Country:</h2>
     <div id="my_dataviz" style="text-align:center;"></div>
-    <p> <br> <br></p>
+    <p> <br></p>
+
+    <p>World map view showing total laboratory confirmed cases (till 4th July 2020) grouped by
+        population density. Circle size reflects the total confirmed cases. For a pandemic like Corona virus,
+        we would expect that highest density areas are likely be worst effected.<br> However, looking at the chart,
+        we see that this is not true. Countries like South Korea and Singapore have done far better in controlling
+        the spread when compared to lower density countries like US and South America. Looking at the map view,
+        we could see that <br>countries like US, Brazil, Russia and India have very high numbers compared to other
+        countries. Hovering over the circle, we could see that US has the highest number of confirmed cases i.e.
+        2839436.
+        Let's look at the next chart to find out Top 10 effected countries.</p>
 
     <h2>Top 10 Countries (Confirmed/Death cases):</h2>
     <div class="custom-input">
@@ -33,8 +37,25 @@
         <input id="DeathButton" type="button" title="Click to show Death Cases" value="Death cases"></input>
     </div>
     <div id="my_dataviz3" style="text-align:center;"></div>
-
-    <p> <br> <br> </p>
+    <p><br></p>
+    <p>Top 4 countries shown here in this chart for number of confirmed cases is what we expected by looking at the
+        world map view.
+        The next 6 countries that have very close numbers to each others. US numbers are close to double of what next
+        highest country Brazil.</p>
+    <!-- <p><br></p> -->
+    <p>
+        By selecting the button "Death cases", we see that US and Brazil have again appeared at the top of the chart
+        with US
+        almost double the numbers. Countries that appeared in top 10 for confirmed cases also make it to the
+        top 10 list
+        for death cases with exception of <br>France and Iran suggesting, the death rates in France and Iran could be
+        very
+        high compared
+        to other countries. Russia seem have better control over death rate as even though they had high confirmed
+        numbers,
+        their death toll is comparitively lower than other top <br>countries. From this, we could say that higher
+        confirmed
+        cases lead to higher death toll however with greater control, we could reduce the death rates. </p>
 
     <h2>Timeline of Confirmed cases - by Country:</h2>
     <div class="custom-select">
@@ -42,6 +63,32 @@
         <select id="selectButton" style="text-align:center;"></select>
     </div>
     <div id="my_dataviz2" style="text-align:center;"></div>
+    <p> <br> </p>
+    <p>Let's look at the country specific trend of the top 2 countries for confirmed cases. Selecting US from the
+        dropdown, we see that it all started in around mid March. May and June months saw some control over the spread
+        however,
+        looking at the timeline <br>between June and July, the number of cases seem to be increasing again. If we look
+        at
+        Australia,
+        that had a similar starting phase, has done much better to control the pandemic.From April, we could see the
+        curve flatting out with some quick measures. <br>It is also very prominent that relaxed social distancing rules
+        in
+        July is
+        showing increase in number again. It would be interesting to see if Australia can control the increase this
+        again.</p>
+    <p>Unlike US, the number of cases in Brazil has been consistently rising. It started shortly after US however it
+        seems
+        Brazil has done better than US in controlling the pandemic. However, the steady increase shows something is not
+        working.
+        More effective <br>measures are needed. </p>
 
-    <p> <br> <br> </p>
+
+    <p> <br><br> </p>
+
+    <footer class="footer">
+        <p>Author: Venkat B Rao</p>
+        <p>Data Source: Johns Hopkins University</p>
+        <p><a class="eml" href="mailto:vrb3@illinois.edu">vrb3@illinois.edu</a></p>
+    </footer>
+
 </body>
