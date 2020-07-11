@@ -108,21 +108,58 @@ footer {
 	color: white;
 	}	
 
-    /* .annotation path {
-		stroke: var(--accent-color);
-		fill: none;
-	  }
-  
-	  .annotation path.connector-arrow, 
-	  .annotation path.connector-dot, 
-	  .title text, .annotation text {
-		fill: var(--accent-color);
-	  }
-  
-	  .annotation-note-bg {
-		fill: rgba(0, 0, 0, 0);
-	  }
-  
-	  .annotation-note-title {
-		font-weight: bold;
-	  } */
+
+.ticks {
+font-size: 10px;
+}
+
+.track,
+.track-inset,
+.track-overlay {
+stroke-linecap: round;
+}
+
+.track {
+stroke: #000;
+stroke-opacity: 0.3;
+stroke-width: 10px;
+}
+
+.track-inset {
+stroke: #ddd;
+stroke-width: 8px;
+}
+
+.track-overlay {
+pointer-events: stroke;
+stroke-width: 50px;
+stroke: transparent;
+cursor: crosshair;
+}
+
+.handle {
+fill: #fff;
+stroke: #000;
+stroke-opacity: 0.5;
+stroke-width: 1.25px;
+}
+
+#play-button {
+	position: absolute;
+	top: 140px;
+	left: 50px;
+	background: #f08080;
+	padding-right: 26px;
+	border-radius: 3px;
+	border: none;
+	color: white;
+	margin: 0;
+	padding: 0 12px;
+	width: 60px;
+	cursor: pointer;
+	height: 30px;
+  }
+
+  #play-button:hover {
+	background-color: #696969;
+  }   

@@ -85,7 +85,7 @@ async function init1() {
 					"Density Group: " + d[0].DensityGroup + "<br>" +
 					"Density: " + d[0].Density)
 				.style("left", (d3.mouse(this)[0] + 200) + "px")
-				.style("top", (d3.mouse(this)[1] + 2200) + "px")
+				.style("top", (d3.mouse(this)[1] + 2000) + "px")
 		}
 
 		var mouseleave = function (d) {
@@ -100,9 +100,9 @@ async function init1() {
 					note: {
 						label: "Growth slowed before raising again",
 						title: "Possible start of 2nd wave",
-						align: "middle",  // try right or left
-						wrap: 300,  // try something smaller to see text split in several lines
-						padding: 10   // More = text lower
+						align: "middle", 
+						wrap: 300,
+						padding: 10 
 					},
 					connector: {
 						end: "arrow"
@@ -196,13 +196,16 @@ async function init1() {
 	}
 
 	// Initialize the Chart:
-	var data_conf2 = data_conf.filter(function (d, i) { return d.Country == 'Afghanistan' })
+	var data_conf2 = data_conf.filter(function (d, i) { return d.Country == 'US' })
+	document.getElementById("selectButton").value = 174;
 	update(data_conf2)
+
+	console.table(modelList);
 
 	// Button Events:
 	var el = document.getElementById("selectButton");
 	el.onclick = function () {
-		console.log("We are inside Selected Country Event:");
+		console.log(document.getElementById("selectButton").value);
 		document.getElementById("my_dataviz2").innerHTML = "";
 		selcntry = el.options[modelList.selectedIndex].text;
 		var data_conf2 = data_conf.filter(function (d, i) { return d.Country == selcntry })

@@ -5,16 +5,15 @@
     <title>Vrb3: Narrative Visualization Project</title>
     <script src="https://d3js.org/d3.v5.js"></script>
     <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.13.0/d3-legend.js"></script>
     <link rel="stylesheet" type="text/css" href="mystyle.css">
-    <script type="text/javascript" language="javascript" src="map_confirmed.js"></script>
     <script type="text/javascript" language="javascript" src="Top10Confirmed.js"></script>
     <script type="text/javascript" language="javascript" src="confirmed_timeline.js"></script>
-    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
-    <!-- <script src="https://raw.githubusercontent.com/venky2k11/vrb3_d3/master/d3-annotation.min.js"></script> -->
+    <script type="text/javascript" language="javascript" src="map_confirmed2.js"></script>
 </head>
 
-<body onload='init1(); init2(); init3()'>
+<body onload='init1(); init2(); init4()'>
     <div class="header">
         <img src="H3.png" alt="logo" />
     </div>
@@ -30,9 +29,13 @@
         COVID-19 from a density perspective and the countries that have been impacted the most.
     </p>
 
-    <h2>Laboratory Confirmed cases - by Country:</h2>
-    <div id="my_dataviz" style="text-align:center;"></div>
-    <p> <br></p>
+    <!-- Scene: 1 -->
+    <h2>Laboratory Confirmed cases - by Country (Timescale):</h2>
+    <label for="name">Select Date:</label>
+    <input type="date" name="mySlider" id=mySlider min="2020-01-22" max="2020-07-04" value="2020-07-04"
+        onchange="showVal(this.value)">
+    <div id="my_dataviz4" style="text-align:center;"></div>
+    <p> </p>
 
     <p>World map view showing total laboratory confirmed cases (till 4th July 2020) grouped by
         population density. Circle size reflects the total confirmed cases. For a pandemic like Corona virus,
@@ -44,20 +47,19 @@
         2839436.
         Let's look at the next chart to find out Top 10 effected countries.</p>
 
+    <!-- Scene: 2 -->
     <h2>Top 10 Countries (Confirmed/Death cases):</h2>
     <div class="custom-input">
         <input id="ConfirmedButton" type="button" title="Click to show Confirmed Cases" value="Confirmed cases"></input>
         <input id="DeathButton" type="button" title="Click to show Death Cases" value="Death cases"></input>
     </div>
     <div id="my_dataviz3" style="text-align:center;"></div>
-    <p><br></p>
+
     <p>Top 4 countries shown here in this chart for number of confirmed cases is what we expected by looking at the
         above
         world map chart. The next 6 countries that have very close numbers to each others. US numbers are close to
         double of what next
-        highest country Brazil.</p>
-    <!-- <p><br></p> -->
-    <p>
+        highest country Brazil.
         By selecting the button "Death cases", we see that US and Brazil have again appeared at the top of the chart
         with US
         almost double the numbers. Countries that appeared in top 10 for confirmed cases also make it to the
@@ -72,13 +74,14 @@
         cases could lead to higher death toll however with greater control measures, we could reduce the death rates.
     </p>
 
+    <!-- Scene: 3 -->
     <h2>Timeline of Confirmed cases - by Country:</h2>
     <div class="custom-select">
         <p>Select Country:</p>
         <select id="selectButton" style="text-align:center;"></select>
     </div>
     <div id="my_dataviz2" style="text-align:center;"></div>
-    <p> <br> </p>
+
     <p>Let's look at the country specific trend of the top 2 countries for confirmed cases. Selecting US from the
         dropdown, we see that it all started in around mid March. May and June months saw some control over the spread
         however,
@@ -98,7 +101,8 @@
         More effective <br>measures are needed. </p>
 
 
-    <p> <br><br> </p>
+    <p> <br> </p>
+
 
     <footer class="footer">
         <p>Author: Venkat B Rao</p>
