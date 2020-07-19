@@ -67,12 +67,14 @@ async function init1() {
 		var mousemove = function (d) {
 
 			var confcount = 0;
+			var seldate = ' ';
 			var formatTime = d3.timeFormat("%B %d, %Y");
 
 			function searchdata(indate) {
 				data_conf.forEach(function (d) {
 					if (formatTime(d.Date) == formatTime(indate)) {
 						confcount = d.Count;
+						seldate = formatTime(d.Date);
 						console.log(confcount);
 					};
 				})
@@ -84,7 +86,7 @@ async function init1() {
 				.html("Total Confirmed: " + confcount + "<br>" +
 					"Density Group: " + d[0].DensityGroup + "<br>" +
 					"Density: " + d[0].Density + "<br>" +
-					"Date: " + d[0].Date)
+					"Date: " + seldate)
 				.style("left", (d3.mouse(this)[0] + 200) + "px")
 				.style("top", (d3.mouse(this)[1] + 2000) + "px")
 		}
