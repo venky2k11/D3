@@ -83,7 +83,8 @@ async function init1() {
 			tooltip
 				.html("Total Confirmed: " + confcount + "<br>" +
 					"Density Group: " + d[0].DensityGroup + "<br>" +
-					"Density: " + d[0].Density)
+					"Density: " + d[0].Density + "<br>" +
+					"Date: " + d[0].Date)
 				.style("left", (d3.mouse(this)[0] + 200) + "px")
 				.style("top", (d3.mouse(this)[1] + 2000) + "px")
 		}
